@@ -16,9 +16,11 @@ vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { desc = "
 vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end, { desc = "Harpoon to file 2" })
 vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end, { desc = "Harpoon to file 3" })
 vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end, { desc = "Harpoon to file 4" })
+vim.keymap.set("n", "<leader>hc", function() harpoon:list():clear() end, { desc = "Clears Harpoon" })
 
 -- [[ Undotree Keymaps ]]
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Open the Undo Tree" })
 
 -- [[ Fugitive Keymaps ]]
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Check project's Git status" })
+

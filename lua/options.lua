@@ -1,57 +1,57 @@
+-- Change the cursor
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
+
 -- Make line numbers default
 vim.opt.number = true
 
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
+-- Relative numbers to help with lines jumping
+vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+-- Space indents
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = true
-
--- Sync clipboard between OS and Neovim.
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
-
--- Enable break indent
-vim.opt.breakindent = true
-
--- Save undo history
+-- Undo & backup settings
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+
+-- Disable highlight search and enable incremental search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Enables 24-bit gui colors if supported by the terminal
+vim.opt.termguicolors = true
+
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
--- Decrease update time
-vim.opt.updatetime = 250
+-- Hyphen pattern in filenames
+vim.opt.isfname:append("@-@")
 
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+-- Decrease update time
+vim.opt.updatetime = 50
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Sets how neovim will display certain whitespace characters in the editor.
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
--- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
-
--- Show which line your cursor is on
-vim.opt.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Sync clipboard between OS and Neovim.
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
 -- Configure WSL Clipboard
 if vim.fn.has 'wsl' == 1 then
