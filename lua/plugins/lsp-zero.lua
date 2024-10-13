@@ -80,11 +80,8 @@ return {
 
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'ts_ls',
-          'eslint',
           'svelte',
-          'angularls',
-          'csharp_ls',
+          'ts_ls',
           'lua_ls',
           'jsonls',
         },
