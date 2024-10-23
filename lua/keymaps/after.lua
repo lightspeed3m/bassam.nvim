@@ -24,3 +24,13 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Open the Undo
 -- [[ Fugitive Keymaps ]]
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Check project's Git status" })
 
+-- [[ Dashboard Keymaps ]]
+vim.keymap.set("n", "<leader>d", function () vim.cmd[[Dashboard]] end, { desc = "Opens the Dashboard"})
+
+-- [[ Persistence Keymaps ]]
+local persistence = require("persistence")
+
+vim.keymap.set("n", "<leader>qr", function () persistence.load() end, { desc = "Restore Session" })
+vim.keymap.set("n", "<leader>qs", function() persistence.select() end, { desc = "Select Session"})
+vim.keymap.set("n", "<leader>ql", function() persistence.load({ last = true}) end, { desc = "Restore Last Session"})
+vim.keymap.set("n", "<leader>qd", function() persistence.stop() end, { desc = "Don't Save Current Session"})
