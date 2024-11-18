@@ -9,14 +9,14 @@ vim.g.have_nerd_font = true
 -- [[ Setting options ]]
 require 'options'
 
--- [[ Keymaps loaded before plugins ]]
-require 'keymaps/before'
-
 -- [[ Basic Autocommands ]]
 require 'autocmds'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
+
+-- [[ Keymaps loaded before plugins ]]
+require 'keymaps/before'
 
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
