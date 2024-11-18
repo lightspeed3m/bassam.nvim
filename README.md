@@ -5,9 +5,9 @@
 My own neovim configuration forked from kickstart.nvim
 
 Key things to know:
-1- init.lua - loads keymaps/before, then plugins, then keymaps/after
-2- keymaps/before - contains general-purpose keymaps
-3- keymaps/after - contains plugin-specific keymaps
+* 1- init.lua - loads keymaps/before, then plugins, then keymaps/after
+* 2- keymaps/before - contains general-purpose keymaps
+* 3- keymaps/after - contains plugin-specific keymaps
 
 ## Installation
 #### Linux Install
