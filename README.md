@@ -10,7 +10,7 @@ Key things to know:
 * keymaps/after - contains plugin-specific keymaps
 
 ## Installation
-#### Linux Install
+#### Install commands
 
 <details><summary>Ubuntu Install Steps</summary>
 
@@ -52,11 +52,8 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 </details>
 
 #### Clone bassam.nvim
-
-<details><summary> Linux and Mac </summary>
-
 ```sh
 git clone https://github.com/lightspeed3m/bassam.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
-</details>
+That's it!
