@@ -86,10 +86,31 @@ return {
           'jsonls',
         },
         handlers = {
-          -- this first function is the "default handler"
-          -- it applies to every language server without a "custom handler"
           function(server_name)
             require('lspconfig')[server_name].setup({})
+          end,
+          ["lua_ls"] = function ()
+            require("lspconfig")["lua_ls"].setup({
+              settings = {
+                Lua = {
+                  workspace = {
+                    checkThirdParty = false,
+                    library = vim.api.nvim_get_runtime_file("", true)
+                 },
+                  telemetry = {
+                    enable = false
+                  },
+                  diagnostics = {
+                    globals = {
+                      "vim"
+                    },
+                    disable = {
+                      "missing-fields"
+                    }
+                  },
+                },
+              },
+            })
           end,
         }
       })
